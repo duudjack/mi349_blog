@@ -46,41 +46,32 @@
   <main>
     <h2>Contact</h2>
     <form name="contact" method="POST" data-netlify="true">
-      <!-- Netlify requires this hidden input for form name tracking -->
       <input type="hidden" name="form-name" value="contact">
 
       <p>
-        <label for="name">Name
-          <input type="text" id="name" name="name" required>
+        <label>Name <input type="text" name="name" required /></label>
+      </p>
+      <p>
+        <label>Email <input type="email" name="email" required /></label>
+      </p>
+      <p>
+        <label>Reason for contact
+          <select name="reason" required>
+            <option value="">Select one...</option>
+            <option value="saying-hi">Saying hi</option>
+            <option value="contractor">Looking for a contractor</option>
+            <option value="interview">Interested in an interview</option>
+          </select>
         </label>
       </p>
-
       <p>
-        <label for="email">Email
-          <input type="email" id="email" name="email" required>
-        </label>
+        <label>Message <textarea name="message" rows="5" required></textarea></label>
       </p>
-
-      <p>
-        <label for="reason">Reason for contact</label>
-        <select id="reason" name="reason" required>
-          <option value="" disabled selected>Choose one…</option>
-          <option value="hi">Saying hi</option>
-          <option value="contractor">Looking for a contractor</option>
-          <option value="interview">Interested in an interview</option>
-        </select>
-      </p>
-
-      <p>
-        <label for="message">Message
-          <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-        </label>
-      </p>
-
       <p>
         <button type="submit">Send</button>
       </p>
     </form>
+
 
 
   </main>
