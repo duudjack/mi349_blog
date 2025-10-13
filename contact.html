@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact – My MI 349 Blog</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -20,42 +20,46 @@
     </div>
   </header>
 
-  <main>
-    <h2>Contact</h2>
-    <form name="contact" method="POST" netlify>
-      <p>
-        <label>Name <input type="text" name="name" /></label>
-      </p>
-      <p>
-        <label>Email <input type="email" name="email" /></label>
-      </p>
-      <p>
-        <label>Reason for Contact
-          <select name="reason" required>
-            <option value="">Select one...</option>
-            <option value="saying hi">Saying Hello</option>
-            <option value="feedback">Offering feedback</option>
-            <option value="collaboration">Collaboration</option>
-          </select>
-        </label>
-      </p>
-      <p>
-        <label>Message <textarea name="message" rows="5" placeholder="Type your message here..." required></textarea></label>
-      </p>
-      <p>
-        <label>How did you hear about us?
-          <input type="radio" name="source" value="friend" /> Friend
-          <input type="radio" name="source" value="social" /> Social Media
-          <input type="radio" name="source" value="search" /> Search Engine
-        </label>
-      </p>
-      <p>
-        <label>Subscribe to newsletter <input type="checkbox" name="subscribe" /></label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
-    </form>
+  <main class="flex-container">
+    <section class="main-content">
+      <h2>Contact</h2>
+      <form name="contact" method="POST" netlify class="contact-form">
+        <p>
+          <label>Name <input type="text" name="name" required /></label>
+        </p>
+        <p>
+          <label>Email <input type="email" name="email" required /></label>
+        </p>
+        <p>
+          <label>Reason for Contact
+            <select name="reason" required>
+              <option value="">Select one...</option>
+              <option value="saying hi">Saying Hello</option>
+              <option value="feedback">Offering feedback</option>
+              <option value="collaboration">Collaboration</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <label>Message 
+            <textarea name="message" rows="5" placeholder="Type your message here..." required></textarea>
+          </label>
+        </p>
+        <fieldset>
+          <legend>How did you hear about us?</legend>
+          <label><input type="radio" name="source" value="friend" /> Friend</label>
+          <label><input type="radio" name="source" value="social" /> Social Media</label>
+          <label><input type="radio" name="source" value="search" /> Search Engine</label>
+        </fieldset>
+        <p>
+          <label><input type="checkbox" name="subscribe" /> Subscribe to newsletter</label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+    </section>
+
     <aside class="sidebar">
       <h2>Sidebar</h2>
       <p>Additional links or information go here.</p>

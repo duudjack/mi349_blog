@@ -209,3 +209,32 @@
     content: " ↗";
     font-size: .9em;
   }
+  .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.main-content {
+  flex: 2 1 60%;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar {
+  flex: 1 1 30%;
+  background-color: #fafafa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 1rem;
+  height: fit-content;
+}
+
