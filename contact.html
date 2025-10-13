@@ -45,17 +45,46 @@
 
   <main>
     <h2>Contact</h2>
-    <form name="contact" netlify>
-  <p>
-    <label>Name <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Email <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact">
+
+      <p>
+        <label>Name <input type="text" name="name" required /></label>
+      </p>
+      <p>
+        <label>Email <input type="email" name="email" required /></label>
+      </p>
+      <p>
+        <label>Subject <input type="text" name="subject" required /></label>
+      </p>
+      <p>
+        <label>Reason for Contact
+          <select name="reason" required>
+            <option value="">Select one...</option>
+            <option value="question">Question</option>
+            <option value="feedback">Feedback</option>
+            <option value="collaboration">Collaboration</option>
+          </select>
+        </label>
+      </p>
+      <p>
+        <label>Message <textarea name="message" rows="5" placeholder="Type your message here..." required></textarea></label>
+      </p>
+      <p>
+        <label>How did you hear about us?
+          <input type="radio" name="source" value="friend" /> Friend
+          <input type="radio" name="source" value="social" /> Social Media
+          <input type="radio" name="source" value="search" /> Search Engine
+        </label>
+      </p>
+      <p>
+        <label>Subscribe to newsletter <input type="checkbox" name="subscribe" /></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
+
   </main>
 
   <footer>
