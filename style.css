@@ -1,189 +1,211 @@
-/* ========== Base Styles ========== */
-html {
-  scroll-behavior: smooth;
-}
+  :root {
+    --max: 80ch;
+    --accent: #111;
+    --bg: #fafafa;
+    --border: #e9e9e9;
+    --radius: .75rem;
+  }
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fafafa;
-  color: #333;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
+  * { box-sizing: border-box; }
 
-/* Headings & Text */
-h1, h2, h3 {
-  color: #1a1a1a;
-  margin-top: 0;
-}
+  body {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background: var(--bg);
+    color: #222;
+  }
 
-p {
-  margin-bottom: 1.2em;
-}
+  /* Sticky header */
+  header {
+    background: var(--accent);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
 
-/* Links */
-a {
-  color: #0077cc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
+  header .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-/* ========== Header & Navigation ========== */
-header {
-  background-color: #004466;
-  color: white;
-  padding: 1em;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: .75rem;
+    margin: 0;
+    padding: 0;
+  }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1em;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
+  nav a {
+    color: #ddd;
+    text-decoration: none;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    transition: background 0.2s ease;
+  }
 
-nav a {
-  color: white;
-  font-weight: bold;
-}
+  nav a[aria-current="page"],
+  nav a:hover {
+    background: #2d2d2d;
+    color: #fff;
+  }
 
-nav a[aria-current="page"] {
-  border-bottom: 2px solid #ffcc00;
-}
+  main {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 1.25rem;
+  }
 
-/* ========== Layout ========== */
-main {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
-}
+  /* Two-column Flexbox layout */
+  .two-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
 
-/* Two-column layout */
-.content {
-  flex: 3;
-  background-color: white;
-  padding: 1.5em;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+  .two-column > article {
+    flex: 2;
+    min-width: 60%;
+  }
 
-.sidebar {
-  flex: 1;
-  background-color: #f1f1f1;
-  padding: 1em;
-  border-radius: 10px;
-}
+  .two-column > aside {
+    flex: 1;
+    min-width: 30%;
+  }
 
-/* Floated image */
-img.float-right {
-  float: right;
-  margin: 0 0 1em 1em;
-  width: 200px;
-  border-radius: 8px;
-}
+  /* Three-column layout */
+  .three-column {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 
-/* ========== Blog Posts ========== */
-article {
-  margin-bottom: 2.5em;
-}
+  .three-column > .left,
+  .three-column > .right {
+    flex: 1;
+    min-width: 20%;
+  }
 
-article header {
-  background: none;
-  color: inherit;
-  padding: 0;
-}
+  .three-column > .center {
+    flex: 2;
+    min-width: 50%;
+  }
 
-figure {
-  margin: 1em 0;
-  text-align: center;
-}
+  article {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin: 1rem 0 2rem;
+  }
 
-figcaption {
-  font-size: 0.9em;
-  color: #666;
-}
+  .meta { color: #555; font-size: .95rem; }
 
-/* Table Styling */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1em;
-}
+  figure { margin: 1rem 0; }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 0.75em;
-  text-align: left;
-}
+  /* Floated image */
+  figure.floated {
+    float: right;
+    width: 40%;
+    margin: 0 0 1rem 1rem;
+    text-align: center;
+  }
 
-th {
-  background-color: #f4f4f4;
-}
+  figcaption {
+    font-size: .85rem;
+    color: #666;
+  }
 
-/* ========== Forms ========== */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: .5rem;
+  }
 
-/* Attribute selector example */
-input[type="email"], input[type="text"], select, textarea {
-  padding: 0.6em;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  font-size: 1em;
-  width: 100%;
-}
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
 
-input[type="submit"], button {
-  background-color: #004466;
-  color: white;
-  border: none;
-  padding: 0.8em 1.2em;
-  border-radius: 5px;
-  cursor: pointer;
-}
+  th, td {
+    border: 1px solid #ccc;
+    padding: .5rem;
+  }
 
-input[type="submit"]:hover {
-  background-color: #0077cc;
-}
+  thead th { background: #f2f2f2; }
 
-/* Multi-column form layout (Flexbox) */
-.form-row {
-  display: flex;
-  gap: 1em;
-}
+  /* Multi-column form layout */
+  form {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+  }
 
-.form-row > div {
-  flex: 1;
-}
+  form .form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 
-/* ========== Footer ========== */
-footer {
-  background-color: #004466;
-  color: white;
-  text-align: center;
-  padding: 1em;
-  margin-top: 2em;
-}
+  form .form-row > div {
+    flex: 1;
+    min-width: 45%;
+  }
 
-/* ========== Utility Classes ========== */
-.center {
-  text-align: center;
-}
+  label {
+    display: block;
+    font-weight: 600;
+    margin-top: .25rem;
+  }
 
-#highlight {
-  background-color: #fffbcc;
-  padding: 0.5em;
-  border-radius: 5px;
-}
+  input, textarea, select, button {
+    width: 100%;
+    padding: .6rem;
+    margin-top: .35rem;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+  }
+
+  button {
+    background: var(--accent);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #333;
+  }
+
+  footer {
+    max-width: var(--max);
+    margin: 2rem auto;
+    padding: 0 1.25rem 3rem;
+    color: #666;
+  }
+
+  /* Example ID selector */
+  #highlight {
+    background: #fff8e1;
+    border-left: 4px solid #ffb300;
+    padding: .75rem;
+    margin: 1rem 0;
+  }
+
+  /* Example attribute selector */
+  a[target="_blank"]::after {
+    content: " ↗";
+    font-size: .9em;
+  }
