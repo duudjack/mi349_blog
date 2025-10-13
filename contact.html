@@ -45,26 +45,17 @@
 
   <main>
     <h2>Contact</h2>
-    <form>
-      <label for="name">Name</label>
-      <input id="name" type="text" required>
-
-      <label for="email">Email</label>
-      <input id="email" type="email" required>
-
-      <label for="reason">Reason for contact</label>
-      <select id="reason" required>
-        <option value="" disabled selected>Choose one…</option>
-        <option value="hi">Saying hi</option>
-        <option value="contractor">Looking for a contractor</option>
-        <option value="interview">Interested in an interview</option>
-      </select>
-
-      <label for="message">Message</label>
-      <textarea id="message" rows="6" required></textarea>
-
-      <button type="submit">Send</button>
-    </form>
+    <form name="contact" netlify>
+  <p>
+    <label>Name <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Email <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
   </main>
 
   <footer>
