@@ -1,0 +1,189 @@
+/* ========== Base Styles ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings & Text */
+h1, h2, h3 {
+  color: #1a1a1a;
+  margin-top: 0;
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
+/* Links */
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Header & Navigation ========== */
+header {
+  background-color: #004466;
+  color: white;
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+}
+
+nav a[aria-current="page"] {
+  border-bottom: 2px solid #ffcc00;
+}
+
+/* ========== Layout ========== */
+main {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Two-column layout */
+.content {
+  flex: 3;
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #f1f1f1;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+/* Floated image */
+img.float-right {
+  float: right;
+  margin: 0 0 1em 1em;
+  width: 200px;
+  border-radius: 8px;
+}
+
+/* ========== Blog Posts ========== */
+article {
+  margin-bottom: 2.5em;
+}
+
+article header {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+figure {
+  margin: 1em 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.75em;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+/* ========== Forms ========== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Attribute selector example */
+input[type="email"], input[type="text"], select, textarea {
+  padding: 0.6em;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+
+input[type="submit"], button {
+  background-color: #004466;
+  color: white;
+  border: none;
+  padding: 0.8em 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0077cc;
+}
+
+/* Multi-column form layout (Flexbox) */
+.form-row {
+  display: flex;
+  gap: 1em;
+}
+
+.form-row > div {
+  flex: 1;
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: #004466;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+}
+
+/* ========== Utility Classes ========== */
+.center {
+  text-align: center;
+}
+
+#highlight {
+  background-color: #fffbcc;
+  padding: 0.5em;
+  border-radius: 5px;
+}
