@@ -1,80 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Blog</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My MI 349 Blog</title>
+  <meta name="description" content="A simple class blog built with semantic HTML5." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Alpha's MI 349 Blog</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <body>
-    <header>
-      <div class="wrap">
-        <h1>My Blog</h1>
-        <nav>
-          <ul>
-            <li><a href="index.html" aria-current="page">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main class="two-column">
-      <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT + SIDEBAR -->
+  <main class="two-column">
+    <div class="content">
+      <!-- ARTICLE 1 -->
       <article>
-        <h2>Welcome to My Blog</h2>
-        <p class="meta">Posted on October 12, 2025 by Mouhamet</p>
+        <h2>Finding Flow in a Busy Semester</h2>
+        <p class="meta">
+          By <span rel="author">Mouhamet Diene</span> ·
+          <time datetime="2025-09-20">Sept 20, 2025</time>
+        </p>
 
         <figure class="floated">
-          <img src="images/blog-photo.jpg" alt="Laptop and coffee on desk" />
-          <figcaption>A calm morning setup for writing.</figcaption>
+          <img src="https://picsum.photos/seed/campus/600/400" alt="Study space" />
+          <figcaption>A quiet corner for focus.</figcaption>
         </figure>
 
         <p>
-          Welcome to my personal blog! Here, I’ll share thoughts on technology, 
-          design, and cybersecurity. The goal is to make complex digital 
-          topics feel approachable and human. Grab your coffee and read on.
+          Balancing classes, clubs, and a job can feel overwhelming.
+          I learned to focus by allocating set times for task flow.
         </p>
 
-        <div id="highlight">
-          <strong>Quick Insight:</strong> Staying informed about cybersecurity 
-          trends isn’t just for IT professionals — it’s for everyone who uses 
-          the internet daily.
-        </div>
+        <table>
+          <caption>Task Management Results</caption>
+          <thead>
+            <tr>
+              <th>Setup</th>
+              <th>Tasks Completed</th>
+              <th>Focus (1–10)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Library booth</td><td>7</td><td>4</td></tr>
+            <tr><td>Apartment room desk</td><td>5</td><td>10</td></tr>
+            <tr><td>Multicultural center</td><td>6</td><td>6</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <!-- ARTICLE 2 -->
+      <article>
+        <h2>Why Minimal HTML Makes Better Projects</h2>
+        <p class="meta">
+          By <span rel="author">Mouhamet Diene</span> ·
+          <time datetime="2025-09-21">Sept 27, 2025</time>
+        </p>
+
+        <figure>
+          <img src="https://picsum.photos/seed/html5/1200/700" alt="Clean code editor" />
+          <figcaption>Readability is a feature.</figcaption>
+        </figure>
 
         <p>
-          I’ll also post tutorials, reflections, and resources to help 
-          you better understand how our digital world works. Whether you’re 
-          a student, a developer, or simply curious, there’s something here for you.
+          Using semantic HTML elements like <code>&lt;article&gt;</code>,
+          <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code> ensures clarity
+          and accessibility in web projects. Simplicity supports focus,
+          readability, and collaboration — all key aspects of effective design.
         </p>
       </article>
 
-      <!-- SIDEBAR -->
-      <aside>
-        <h3>About This Site</h3>
-        <p>
-          This blog explores modern technology through clear writing and 
-          thoughtful discussion. Expect articles on cybersecurity, 
-          data ethics, and how technology impacts our everyday lives.
-        </p>
+      <!-- NEWSLETTER FORM -->
+      <section class="newsletter">
+        <h2>Join the Newsletter</h2>
+        <form name="signup" netlify>
+          <p>
+            <label for="signup-name">Name</label>
+            <input id="signup-name" type="text" name="name" required>
+          </p>
+          <p>
+            <label for="signup-email">Email</label>
+            <input id="signup-email" type="email" name="email" required>
+          </p>
+          <p>
+            <button type="submit">Subscribe</button>
+          </p>
+        </form>
+      </section>
+    </div>
 
-        <h3>Recent Posts</h3>
-        <ul>
-          <li><a href="#">The Rise of AI and Data Privacy</a></li>
-          <li><a href="#">Designing for Accessibility</a></li>
-          <li><a href="#">Securing Your Digital Identity</a></li>
-        </ul>
-      </aside>
-    </main>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h2>Sidebar</h2>
+      <p>Additional links or information go here.</p>
+      <ul>
+        <li><a href="#">Study Tips</a></li>
+        <li><a href="#">Productivity Tools</a></li>
+        <li><a href="#">Student Life</a></li>
+      </ul>
+    </aside>
+  </main>
 
-    <footer>
-      <p>&copy; 2025 My Blog. Built for MI 349.</p>
-      <p>
-        <a href="https://github.com/yourusername/mi349_blog" target="_blank">GitHub Repo</a> |
-        <a href="https://your-netlify-site.netlify.app" target="_blank">Live Site</a>
-      </p>
-    </footer>
-  </body>
+  <footer>
+    <small>&copy; <time datetime="2025">2025</time> Mouhamet Diene. Built for MI 349.</small>
+  </footer>
+</body>
 </html>
